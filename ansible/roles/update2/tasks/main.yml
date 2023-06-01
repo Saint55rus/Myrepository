@@ -1,0 +1,12 @@
+---
+# tasks file for update2
+
+  - name: Hold vim
+    ansible.builtin.dpkg_selections:
+      name: vim
+      selection: hold
+      
+     
+  - name: Update all packages on servers except vim
+    apt: upgrade=dist force_apt_get=yes
+    
